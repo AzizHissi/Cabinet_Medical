@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cabinet Medicale", "Cabinet Medicale\Cabinet Medicale.csproj", "{6B711D75-61CA-453A-B9C6-B0F310C1049E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Cabinet", "Cabinet\Cabinet.vdproj", "{A33CC124-9695-44F9-B434-5BD73A0DD805}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B711D75-61CA-453A-B9C6-B0F310C1049E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B711D75-61CA-453A-B9C6-B0F310C1049E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B711D75-61CA-453A-B9C6-B0F310C1049E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B711D75-61CA-453A-B9C6-B0F310C1049E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A33CC124-9695-44F9-B434-5BD73A0DD805}.Debug|Any CPU.ActiveCfg = Debug
+		{A33CC124-9695-44F9-B434-5BD73A0DD805}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CEDCA48-B0F3-43F4-BBA3-DFCF6852D26D}
+	EndGlobalSection
+EndGlobal

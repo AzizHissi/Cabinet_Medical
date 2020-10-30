@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Cabinet_MedicaleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Medecin">
+          <Key>
+            <PropertyRef Name="CodeMedecin" />
+          </Key>
+          <Property Name="CodeMedecin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NomMedecin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelMedecin" Type="varchar" MaxLength="15" />
+          <Property Name="DateEmbauche" Type="date" />
+          <Property Name="SpecialiteMedecin" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="CodePatient" />
+          </Key>
+          <Property Name="CodePatient" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NomPatient" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdressePatient" Type="varchar" MaxLength="50" />
+          <Property Name="DateNaissance" Type="date" />
+          <Property Name="SexePatient" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="RDV">
+          <Key>
+            <PropertyRef Name="NumeroRDV" />
+          </Key>
+          <Property Name="NumeroRDV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateRDV" Type="date" />
+          <Property Name="HeureRDV" Type="varchar" MaxLength="10" />
+          <Property Name="CodeMedecin" Type="varchar" MaxLength="50" />
+          <Property Name="CodePatient" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Specialite">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nom" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Medecin__Special__2D27B809">
+          <End Role="Specialite" Type="Self.Specialite" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Medecin" Type="Self.Medecin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialite">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Medecin">
+              <PropertyRef Name="SpecialiteMedecin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Cabinet_MedicaleModelStoreContainer">
+          <EntitySet Name="Medecin" EntityType="Self.Medecin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RDV" EntityType="Self.RDV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specialite" EntityType="Self.Specialite" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Medecin__Special__2D27B809" Association="Self.FK__Medecin__Special__2D27B809">
+            <End Role="Specialite" EntitySet="Specialite" />
+            <End Role="Medecin" EntitySet="Medecin" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Cabinet_MedicaleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Medecin">
+          <Key>
+            <PropertyRef Name="CodeMedecin" />
+          </Key>
+          <Property Name="CodeMedecin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomMedecin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TelMedecin" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DateEmbauche" Type="DateTime" Precision="0" />
+          <Property Name="SpecialiteMedecin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Specialite" Relationship="Self.FK__Medecin__Special__2D27B809" FromRole="Medecin" ToRole="Specialite" />
+          <NavigationProperty Name="RDVs" Relationship="Self.FK__RDV__CodeMedecin__300424B4" FromRole="Medecin" ToRole="RDV" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="CodePatient" />
+          </Key>
+          <Property Name="CodePatient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomPatient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AdressePatient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateNaissance" Type="DateTime" Precision="0" />
+          <Property Name="SexePatient" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="RDVs" Relationship="Self.FK__RDV__CodePatient__30F848ED" FromRole="Patient" ToRole="RDV" />
+        </EntityType>
+        <EntityType Name="RDV">
+          <Key>
+            <PropertyRef Name="NumeroRDV" />
+          </Key>
+          <Property Name="NumeroRDV" Nullable="false" Type="Int32" />
+          <Property Name="DateRDV" Precision="0" Type="DateTime" />
+          <Property Name="HeureRDV" MaxLength="10" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="CodeMedecin" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="CodePatient" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <NavigationProperty Name="Medecin" Relationship="Self.FK__RDV__CodeMedecin__300424B4" FromRole="RDV" ToRole="Medecin" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__RDV__CodePatient__30F848ED" FromRole="RDV" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Specialite">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Medecins" Relationship="Self.FK__Medecin__Special__2D27B809" FromRole="Specialite" ToRole="Medecin" />
+        </EntityType>
+        <Association Name="FK__Medecin__Special__2D27B809">
+          <End Role="Specialite" Type="Self.Specialite" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Medecin" Type="Self.Medecin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialite">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Medecin">
+              <PropertyRef Name="SpecialiteMedecin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RDV__CodeMedecin__300424B4">
+          <End Type="Self.Medecin" Multiplicity="0..1" Role="Medecin">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Self.RDV" Multiplicity="*" Role="RDV" />
+          <ReferentialConstraint>
+            <Principal Role="Medecin">
+              <PropertyRef Name="CodeMedecin" />
+            </Principal>
+            <Dependent Role="RDV">
+              <PropertyRef Name="CodeMedecin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RDV__CodePatient__30F848ED">
+          <End Type="Self.Patient" Multiplicity="0..1" Role="Patient">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Self.RDV" Multiplicity="*" Role="RDV" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="CodePatient" />
+            </Principal>
+            <Dependent Role="RDV">
+              <PropertyRef Name="CodePatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Medecins" EntityType="Self.Medecin" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="RDVs" EntityType="Self.RDV" />
+          <EntitySet Name="Specialites" EntityType="Self.Specialite" />
+          <AssociationSet Name="FK__Medecin__Special__2D27B809" Association="Self.FK__Medecin__Special__2D27B809">
+            <End Role="Specialite" EntitySet="Specialites" />
+            <End Role="Medecin" EntitySet="Medecins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RDV__CodeMedecin__300424B4" Association="Self.FK__RDV__CodeMedecin__300424B4">
+            <End EntitySet="Medecins" Role="Medecin" />
+            <End EntitySet="RDVs" Role="RDV" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RDV__CodePatient__30F848ED" Association="Self.FK__RDV__CodePatient__30F848ED">
+            <End EntitySet="Patients" Role="Patient" />
+            <End EntitySet="RDVs" Role="RDV" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Cabinet_MedicaleModelStoreContainer" CdmEntityContainer="DbEntity">
+          <EntitySetMapping Name="Medecins">
+            <EntityTypeMapping TypeName="Cabinet_MedicaleModel.Medecin">
+              <MappingFragment StoreEntitySet="Medecin">
+                <ScalarProperty Name="CodeMedecin" ColumnName="CodeMedecin" />
+                <ScalarProperty Name="NomMedecin" ColumnName="NomMedecin" />
+                <ScalarProperty Name="TelMedecin" ColumnName="TelMedecin" />
+                <ScalarProperty Name="DateEmbauche" ColumnName="DateEmbauche" />
+                <ScalarProperty Name="SpecialiteMedecin" ColumnName="SpecialiteMedecin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="Cabinet_MedicaleModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="CodePatient" ColumnName="CodePatient" />
+                <ScalarProperty Name="NomPatient" ColumnName="NomPatient" />
+                <ScalarProperty Name="AdressePatient" ColumnName="AdressePatient" />
+                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+                <ScalarProperty Name="SexePatient" ColumnName="SexePatient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RDVs">
+            <EntityTypeMapping TypeName="Cabinet_MedicaleModel.RDV">
+              <MappingFragment StoreEntitySet="RDV">
+                <ScalarProperty Name="NumeroRDV" ColumnName="NumeroRDV" />
+                <ScalarProperty Name="DateRDV" ColumnName="DateRDV" />
+                <ScalarProperty Name="HeureRDV" ColumnName="HeureRDV" />
+                <ScalarProperty Name="CodeMedecin" ColumnName="CodeMedecin" />
+                <ScalarProperty Name="CodePatient" ColumnName="CodePatient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specialites">
+            <EntityTypeMapping TypeName="Cabinet_MedicaleModel.Specialite">
+              <MappingFragment StoreEntitySet="Specialite">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

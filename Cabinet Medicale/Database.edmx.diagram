@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a070b739d94446a284d58dbd4277be63" Name="Diagram1">
+        <EntityTypeShape EntityType="Cabinet_MedicaleModel.Medecin" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cabinet_MedicaleModel.Patient" Width="1.5" PointX="7" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cabinet_MedicaleModel.RDV" PointX="5.125" PointY="1.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cabinet_MedicaleModel.Specialite" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="Cabinet_MedicaleModel.FK__Medecin__Special__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="Cabinet_MedicaleModel.FK__RDV__CodeMedecin__300424B4" />
+        <AssociationConnector ManuallyRouted="false" Association="Cabinet_MedicaleModel.FK__RDV__CodePatient__30F848ED" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

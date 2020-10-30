@@ -1,0 +1,22 @@
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\bin\Release\Cabinet Medicale.exe.config
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\bin\Release\Cabinet Medicale.exe
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\bin\Release\Cabinet Medicale.pdb
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\bin\Release\Bunifu_UI_v1.52.dll
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\bin\Release\EntityFramework.dll
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\bin\Release\MetroFramework.Design.dll
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\bin\Release\MetroFramework.dll
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\bin\Release\MetroFramework.Fonts.dll
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\bin\Release\EntityFramework.xml
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet_Medicale.Form1.resources
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet_Medicale.Medecin_frm.resources
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet_Medicale.Patient_frm.resources
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet_Medicale.Properties.Resources.resources
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet_Medicale.RDV_Date_frm.resources
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet_Medicale.RDV_frm.resources
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet_Medicale.SplashScreen.resources
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet Medicale.csproj.GenerateResource.cache
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet Medicale.csproj.CoreCompileInputs.cache
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet Medicale.csproj.CopyComplete
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet Medicale.exe
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet Medicale.pdb
+C:\Users\Aziz\source\repos\Cabinet Medicale\Cabinet Medicale\obj\Release\Cabinet Medicale.csprojAssemblyReference.cache

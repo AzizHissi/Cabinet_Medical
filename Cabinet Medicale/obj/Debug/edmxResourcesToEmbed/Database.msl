@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Cabinet_MedicaleModelStoreContainer" CdmEntityContainer="DbEntity">
+    <EntitySetMapping Name="Medecins">
+      <EntityTypeMapping TypeName="Cabinet_MedicaleModel.Medecin">
+        <MappingFragment StoreEntitySet="Medecin">
+          <ScalarProperty Name="CodeMedecin" ColumnName="CodeMedecin" />
+          <ScalarProperty Name="NomMedecin" ColumnName="NomMedecin" />
+          <ScalarProperty Name="TelMedecin" ColumnName="TelMedecin" />
+          <ScalarProperty Name="DateEmbauche" ColumnName="DateEmbauche" />
+          <ScalarProperty Name="SpecialiteMedecin" ColumnName="SpecialiteMedecin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="Cabinet_MedicaleModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="CodePatient" ColumnName="CodePatient" />
+          <ScalarProperty Name="NomPatient" ColumnName="NomPatient" />
+          <ScalarProperty Name="AdressePatient" ColumnName="AdressePatient" />
+          <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+          <ScalarProperty Name="SexePatient" ColumnName="SexePatient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RDVs">
+      <EntityTypeMapping TypeName="Cabinet_MedicaleModel.RDV">
+        <MappingFragment StoreEntitySet="RDV">
+          <ScalarProperty Name="NumeroRDV" ColumnName="NumeroRDV" />
+          <ScalarProperty Name="DateRDV" ColumnName="DateRDV" />
+          <ScalarProperty Name="HeureRDV" ColumnName="HeureRDV" />
+          <ScalarProperty Name="CodeMedecin" ColumnName="CodeMedecin" />
+          <ScalarProperty Name="CodePatient" ColumnName="CodePatient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specialites">
+      <EntityTypeMapping TypeName="Cabinet_MedicaleModel.Specialite">
+        <MappingFragment StoreEntitySet="Specialite">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
